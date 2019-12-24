@@ -1,0 +1,26 @@
+<div
+  class="bg-danger text-white"
+  style="min-width: 100%; text-align: center;"
+  *ngIf="errorMessage"
+>
+  {{ errorMessage }}
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Holder Name</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let account of accounts" (click)="openDocument(account.id)">
+      <td>{{ account.accountNumber }}</td>
+      <td>{{ account.accountHolderPhoneNumber }}</td>
+      <td>{{ account.accountHolderName }}</td>
+      <td>{{ account.accountDescription }}</td>
+    </tr>
+  </tbody>
+</table>

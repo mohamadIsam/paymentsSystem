@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="btn btn-outline-info" [routerLink]="['/account']">New Account</a>
+      </li>
+    </ul>
+  </div> -->
+  <div class="dropdown">
+    <button class="btn dropdown-toggle btn btn-outline-info" appDropdown type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      New Document
+    </button>
+    <div class="dropdown-menu" appDropdown aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" [routerLink]="['/account']">Account</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [routerLink]="['/payment']">Payment</a>
+    </div>
+  </div>
+</nav>
+
+<div class="row p-3">
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item" routerLink="accounts" routerLinkActive="active">
+        Accounts
+      </li>
+      <li class="list-group-item" routerLink="payments" routerLinkActive="active">
+        Payments
+      </li>
+    </ul>
+  </div>
+  <div class="col-8"><router-outlet></router-outlet></div>
+</div>
+

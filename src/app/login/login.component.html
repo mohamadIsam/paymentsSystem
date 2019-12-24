@@ -1,0 +1,43 @@
+<div class="row">
+  <div
+    class="p-3 mb-2 bg-danger text-white mx-auto"
+    *ngIf="errorMessage"
+    style="min-width: 100%; text-align: center;"
+  >
+    {{ errorMessage }}
+  </div>
+</div>
+<div class="card mx-auto" style="max-width: 500px; margin-top: 30px;">
+  <div class="card-header">
+    Payments System
+  </div>
+  <div style="padding: 20px;">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="exampleInputEmail1">User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          formControlName="userName"
+          placeholder="User Name"
+        />
+      </div>
+      <span *ngIf="!loginForm.get('userName').valid && loginForm.get('userName').touched" > This field is Required</span>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" > This field is Required </span>
+
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a href="" style="margin-left: 20px;">Forget your password?</a>
+    </form>
+  </div>
+</div>

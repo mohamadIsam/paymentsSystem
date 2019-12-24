@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    Payment Details.
+  </div>
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-8">
+            <label for="amount"> Amount</label>
+            : {{payment.amount}}
+          </div>
+
+          <div class="form-group col-8">
+            <label for="currencyCode">Currency Code</label>
+            : {{payment.currencyCode}}
+          </div>
+          <div class="form-group col-8">
+            <label for="sourceAccountNumber">Source Account Number</label>
+            : {{payment.sourceAccountNumber}}
+          </div>
+          <div class="form-group col-8">
+            <label for="destinationAccountNumber"
+              >Destination Account Number</label
+            >
+            : {{payment.destinationAccountNumber}}
+          </div>
+          <div class="form-group col-8">
+            <label for="description">Discription</label>
+            : {{payment.paymentDescription}}
+          </div>
+        </div>
+        <div class="form-group" style="text-align: center;">
+          <button type="submit" class="btn btn-danger" (click)="cancel()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

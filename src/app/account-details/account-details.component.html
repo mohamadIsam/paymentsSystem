@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    Account Details
+  </div>
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <form >
+        <div class="form-row">
+          <div class="form-group col-8">
+            <label for="accountNumber">Account Number</label>
+            : {{account.accountNumber}}
+          </div>
+
+          <div class="form-group col-8">
+            <label for="holderName">Holder Name</label>
+            : {{account.accountHolderName}}
+          </div>
+
+          <div class="form-group col-8">
+            <label for="phoneNumber">Phone Number</label>
+            : {{account.accountHolderPhoneNumber}}
+          </div>
+          <div class="form-group col-8">
+            <label for="description">Discription</label>
+            : {{account.accountDescription}}
+          </div>
+        </div>
+        <div class="form-group" style="text-align: center;">
+          <button type="submit" class="btn btn-danger" (click)="cancel()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

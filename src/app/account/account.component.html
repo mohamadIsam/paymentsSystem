@@ -1,0 +1,95 @@
+<div class="row">
+  <div
+    class="p-3 mb-2 bg-danger text-white mx-auto"
+    *ngIf="errorMessage"
+    style="min-width: 100%; text-align: center;"
+  >
+    {{ errorMessage }}
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    Account Form
+  </div>
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <form [formGroup]="accountForm" (ngSubmit)="save()">
+        <div class="form-row">
+          <div class="form-group col-8">
+            <label for="accountNumber">Account Number</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="accountNumber"
+              id="accountNumber"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                !accountForm.get('accountNumber').valid &&
+                accountForm.get('accountNumber').touched
+              "
+            >
+              Account Number must contain 6 digits.
+            </span>
+          </div>
+
+          <div class="form-group col-8">
+            <label for="holderName">Holder Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="accountHolderName"
+              id="holderName"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                !accountForm.get('accountHolderName').valid &&
+                accountForm.get('accountHolderName').touched
+              "
+            >
+              The Holder Name field is required.
+            </span>
+          </div>
+
+          <div class="form-group col-8">
+            <label for="phoneNumber">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="accountHolderPhoneNumber"
+              id="phoneNumber"
+            />
+          </div>
+          <div class="form-group col-8">
+            <label for="description">Discription</label>
+            <textarea
+              type="text"
+              class="form-control"
+              id="description"
+              row="3"
+              formControlName="accountDescription"
+            ></textarea>
+            <span
+              class="text-danger"
+              *ngIf="
+                !accountForm.get('accountDescription').valid &&
+                accountForm.get('accountDescription').touched
+              "
+            >
+              The value in description field is more than 1000 character.
+            </span>
+          </div>
+        </div>
+        <div class="form-group" style="text-align: center;">
+          <button type="submit" class="btn btn-primary">Save</button
+          >&nbsp;&nbsp;
+          <button type="submit" class="btn btn-danger" (click)="cancel()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
