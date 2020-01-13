@@ -86,11 +86,14 @@ export class PaymentComponent implements OnInit {
           console.log(error);
         }
       );
+    } else {
+      this.errorMessage = 'Please enter all the required fields.';
+      this.paymentForm.markAllAsTouched();
     }
   }
 
   cancel() {
     this.paymentForm.reset();
-    this.router.navigate(["/application"]);
+    this.router.navigate(['/application']);
   }
 }

@@ -1,12 +1,4 @@
-<div class="row">
-  <div
-    class="p-3 mb-2 bg-danger text-white mx-auto"
-    *ngIf="errorMessage"
-    style="min-width: 100%; text-align: center;"
-  >
-    {{ errorMessage }}
-  </div>
-</div>
+<app-display-error [message] = 'errorMessage'></app-display-error>
 <div class="card">
   <div class="card-header">
     Account Form

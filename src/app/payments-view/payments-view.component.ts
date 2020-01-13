@@ -19,7 +19,7 @@ export class PaymentsViewComponent implements OnInit {
     this.serverService.getAllPayments().subscribe(data => {
       this.payments = data;
     }, error => {
-      this.errorMessage = error.error;
+      this.errorMessage = error.message;
     });
   }
 

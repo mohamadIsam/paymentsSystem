@@ -16,6 +16,7 @@ import { ServerServices } from './services/server.services';
 import { Error404Component } from './error404/error404.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { DisplayErrorComponent } from './display-error/display-error.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PaymentDetailsComponent } from './payment-details/payment-details.compo
     PaymentsViewComponent,
     Error404Component,
     AccountDetailsComponent,
-    PaymentDetailsComponent
+    PaymentDetailsComponent,
+    DisplayErrorComponent
   ],
   imports: [
     BrowserModule,

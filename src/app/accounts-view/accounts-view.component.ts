@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ServerServices } from "../services/server.services";
-import { Router } from "@angular/router";
-import { Account } from "../share/account.model";
+import { Component, OnInit } from '@angular/core';
+import { ServerServices } from '../services/server.services';
+import { Router } from '@angular/router';
+import { Account } from '../share/account.model';
 
 @Component({
-  selector: "app-accounts-view",
-  templateUrl: "./accounts-view.component.html",
-  styleUrls: ["./accounts-view.component.scss"]
+  selector: 'app-accounts-view',
+  templateUrl: './accounts-view.component.html',
+  styleUrls: ['./accounts-view.component.scss']
 })
 export class AccountsViewComponent implements OnInit {
   accounts: any;
@@ -19,12 +19,12 @@ export class AccountsViewComponent implements OnInit {
         this.accounts = data;
       },
       error => {
-        this.errorMessage = error.error;
+        this.errorMessage = error.message;
       }
     );
   }
 
   openDocument(id: any) {
-    this.router.navigate(["/account", id]);
+    this.router.navigate(['/account', id]);
   }
 }

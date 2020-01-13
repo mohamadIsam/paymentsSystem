@@ -9,7 +9,7 @@ export class DropdownDirective {
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
-  @HostListener('click') onClickEvent(event: Event) {
+  @HostListener('click', ['$event']) onClickEvent(event: Event) {
     if (this.isOpened === false) {
       this.renderer.addClass(this.elementRef.nativeElement.nextElementSibling, 'show');
       this.isOpened = true;

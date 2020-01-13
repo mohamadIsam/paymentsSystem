@@ -41,17 +41,18 @@ export class AccountComponent implements OnInit {
   }
 
   save() {
-    console.log(this.accountForm.valid);
     if (this.accountForm.valid !== false) {
       this.serverService.addAccount(this.accountForm.getRawValue()).subscribe(
         data => {
-          // console.log(data);
           this.router.navigate(['/application']);
         },
         error => {
           this.errorMessage = error.error;
         }
       );
+    }  else {
+      this.errorMessage = 'Please enter all the required fields.';
+      this.accountForm.markAllAsTouched();
     }
   }
 
